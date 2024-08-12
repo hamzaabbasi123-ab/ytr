@@ -1,0 +1,1720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+  /* Mobile Styles */
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+    body {
+        font-size: 12px; /* Example font size for mobile */
+    }
+
+    #background-container {
+        height: auto; /* Let the height adjust based on content */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .logo {
+        position: absolute;
+        top: 10%; /* Adjusted top positioning to move the logo down */
+        left: 10%; /* Adjusted left positioning to move the logo away from the menu */
+        font-size: 18px; /* Smaller font size for mobile */
+        z-index: 10; /* Ensure the logo appears above other elements */
+    }
+     
+    #top-bar-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #top-bar {
+        padding: 5px 10px; /* Adjust padding for better spacing */
+        height: auto; /* Allow height to adjust based on content */
+        width: 30%; /* Ensure it spans the full width of the screen */
+        box-sizing: border-box; /* Include padding in the width/height calculation */
+        font-size: 2px; /* Adjust font size for mobile */
+    }
+
+    #navigation {
+        position: relative;
+        top: 50px; /* Move the navigation down below the logo */
+        width: 100%;
+        text-align: center;
+        z-index: 1; /* Make sure navigation is behind the logo */
+    }
+
+    #left-text, #right-text {
+        position: relative;
+        width: 40%; /* Adjust width to fit within the container */
+        margin: 20px 0; /* Add margin for spacing */
+        text-align: center;
+        font-size: 4px; /* Adjust font size for readability */
+        padding: 5px; /* Add padding for better spacing */
+    }
+
+    #left-text {
+        top: auto; /* Remove specific top positioning */
+    }
+
+    #right-text {
+        top: auto; /* Remove specific top positioning */
+    }
+
+    #left-text h1, #right-text h1 {
+        font-size: 2px; /* Adjusted font size */
+    }
+
+    #increase-size {
+        padding: 10px 15px; /* Adjust padding for mobile */
+    }
+
+    .btn-video {
+        margin: 20px auto; /* Center the button and add spacing */
+        display: block;
+    }
+
+    #shopping-button {
+        padding: 5px 10px; /* Reduce padding for mobile */
+    }
+
+    #colorlib-text {
+        font-size: 24px; /* Adjust font size for mobile devices */
+        margin-right: 10px; /* Adjust margin for better spacing */
+    }
+}
+
+
+
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            font-family: Arial, sans-serif;
+        }
+
+        .logo {
+            position: absolute;
+            top: 22%; /* Aligns at the top of the viewport */
+            left: 18%;
+            width: 100%;
+            font-weight: bold;
+            font-size: 23px;
+        }
+        .logo .letter-a,
+        .logo .letter-o {
+            color: white; /* Color for the letters 'a' and 'o' */
+        }
+        .logo .letter-v {
+            color: red; /* Color for the letter 'v' */
+        }
+
+        /* Background Image Container */
+        #background-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh; /* Full viewport height */
+            background-size: cover;
+            background-position: center;
+            z-index: -1; /* Ensure it's behind other content */
+            transition: background-image 5s;
+        }
+
+        #top-bar {
+            background-color: rgb(70, 70, 70);
+            color: white;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: height 0.3s;
+        }
+        
+        #top-bar-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        /* Base styles (Desktop) */
+
+
+/* Tablet styles */
+body.view-tablet {
+    font-size: 14px; /* Example font size for tablet */
+    /* Other tablet-specific styles */
+}
+
+/* Mobile styles */
+body.view-mobile {
+    font-size: 12px; /* Example font size for mobile */
+    /* Other mobile-specific styles */
+}
+
+/* Simulating the viewport size */
+.view-desktop #top-bar {
+    width: 100%;
+}
+
+.view-tablet #top-bar {
+    width: 768px; /* Width to simulate tablet screen */
+    margin: 0 auto;
+}
+
+.view-mobile #top-bar {
+    width: 375px; /* Width to simulate mobile screen */
+    margin: 0 auto;
+}
+
+/* Add styles for other elements as needed */
+
+        #colorlib-text {
+            font-size: 38px;
+            font-weight: bold;
+            margin-right: 10px; /* Adjust space between text and button */
+        }
+        
+        #increase-size {
+            background-color: rgb(44, 44, 44); /* Black background */
+            border: none;
+            color: white; /* White text color for contrast */
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 20px; /* Space between +Avo and Colorlib text */
+            padding: 25px 30px; /* Adjust padding to make it look better */
+            border-radius: 5px; /* Optional: Rounded corners */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        #increase-size:hover {
+            background-color: gray; /* Change background color on hover for better visibility */
+        }
+        
+        #view-options {
+            display: flex;
+            align-items: center;
+            gap: 20px; /* Increased gap between icons */
+            margin-left: auto; /* Pushes the icons to the right side */
+        }
+        
+        .icon-button {
+            background: none;
+            border: none;
+            padding: 5px; /* Adjust padding if needed */
+            border-left: 6px solid rgb(78, 78, 78); /* White vertical line on the left */
+            border-right: 6px solid rgb(78, 78, 78); /* White vertical line on the right */
+            cursor: pointer;
+            transition: color 0.3s, border-color 0.3s;
+        }
+        
+        .icon-button img {
+            width: 32px; /* Width of the icon */
+            height: 32px; /* Height of the icon */
+        }
+        
+        .icon-button:hover {
+            color: rgb(37, 37, 37); /* Ensure icon color remains white */
+            border-color: darkgray; /* Dark gray vertical lines on hover */
+        }
+        
+        #view-options img,
+        #shopping-button img {
+            width: 32px; /* Size of the icons */
+            height: 32px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        
+        #view-options img:hover,
+        #shopping-button img:hover {
+            opacity: 0.7; /* Slightly change opacity on hover */
+        }
+        
+        #shopping-button {
+            background-color: transparent;
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            background-color: rgb(8, 253, 16);
+        }
+        
+        #shopping-button:hover {
+            background-color: rgb(41, 42, 41);
+            color: white;
+        }
+        
+        #close-bar {
+            background: none;
+            border: none;
+            font-size: 24px; /* Increased icon size */
+            cursor: pointer;
+            margin-left: -10px; /* Space between close icon and shopping button */
+            margin-right: 10px;
+        }
+        
+        .expanded {
+            height: 60px; /* Example height when expanded */
+        }
+
+        /* Navigation Bar */
+        #navigation {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            position: absolute;
+            top: 20%; /* Aligns at the top of the viewport */
+            left: 10%;
+            width: 100%;
+            z-index: 2;
+        }
+        
+        #navigation a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        #navigation a:hover {
+            color: rgb(255, 0, 0);
+        }
+
+        /* Content Section */
+        #left-text {
+            position: absolute;
+            top: 70%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: left;
+            z-index: 1; /* Ensure content is on top of the background */
+        }
+
+        #right-text {
+            position: absolute;
+            top: 60%;
+            left: 90%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: left;
+            z-index: 1; /* Ensure content is on top of the background */
+        }
+
+        #left-text h1, #right-text h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        #left-text p, #right-text p {
+            font-size: 1em;
+            margin: 0;
+            color: rgba(242, 241, 241, 0.888);
+        }
+
+        .number {
+            position: relative; /* Needed for positioning the vertical line */
+            display: inline-block; /* Make sure the element is inline-block */
+            padding-right: 20px; /* Space for the vertical line */
+        }
+
+        .number::after {
+            content: '';
+            position: absolute;
+            right: 0; /* Position the line right after the number */
+            top: 0;
+            height: 100%;
+            width: 5px; /* Width of the vertical line */
+            background-color: red; /* Color of the vertical line */
+        }
+        .hidden {
+    display: none;
+}
+        /* Red Button Styling */
+        #red-button {
+            background-color: red;
+            color: rgb(255, 255, 255);
+            border: none;
+            padding: 20px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px; /* Space between text and button */
+            transition: background-color 0.3s;
+        }
+
+        #red-button:hover {
+            background-color: darkred;
+        }
+        .btn-video {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 300px; /* Add space above the play button */
+    color: rgb(255, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.play-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem; /* Adjust size as needed */
+    width: 60px; /* Adjust width as needed */
+    height: 60px; /* Adjust height as needed */
+    border-radius: 50%; /* Makes the icon circular */
+    border: 10px solid rgb(255, 0, 0); /* Circle border color */
+    background-color: rgb(255, 0, 0); /* Background color of the circle */
+    color: rgb(0, 0, 0); /* Color of the play icon */
+    margin-right: 10px; /* Space between icon and text */
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Ensure transition effects are applied */
+    
+}
+
+.btn-video:hover .play-icon {
+    background-color: rgb(218, 22, 22); /* Change background color on hover */
+    color: rgb(0, 0, 0); /* Change icon color on hover */
+    box-shadow: 0 0 80px rgb(255, 0, 0); /* Red glow effect on hover */
+}
+
+.btn-video:hover {
+    color: rgb(241, 8, 8); /* Optional: change text color on hover */
+}
+/* About Us Section */
+#about-us {
+    padding: 50px 20px; /* Adjust padding as needed */
+    text-align: center;
+    margin-top: 750px;
+    position: relative; 
+    background-color: #f4f4f4; /* Light background color for contrast */
+}
+
+#about-us h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.about-us-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between items */
+}
+
+.about-us-item {
+    text-align: center;
+    width: 150px; /* Adjust as needed */
+}
+
+.about-us-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: Rounded corners for images */
+    margin-bottom: 10px;
+}
+
+.about-us-item p {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    #about-us h2 {
+        font-size: 2.2em; /* Slightly smaller heading on large tablets */
+    }
+
+    .about-us-item {
+        width: 180px; /* Adjust width for larger tablets */
+    }
+
+    .about-us-item p {
+        font-size: 1.1em; /* Slightly smaller text on larger tablets */
+    }
+}
+
+@media (max-width: 992px) {
+    #about-us h2 {
+        font-size: 2em; /* Slightly smaller heading on tablets */
+    }
+
+    .about-us-item {
+        width: 200px; /* Adjust width for tablets */
+    }
+
+    .about-us-item p {
+        font-size: 1em; /* Adjust text size on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    #about-us {
+        padding: 40px 15px; /* Adjust padding for medium screens */
+        margin-top: 500px; /* Adjust top margin for medium screens */
+    }
+
+    #about-us h2 {
+        font-size: 1.8em; /* Smaller heading on medium screens */
+    }
+
+    .about-us-item {
+        width: 250px; /* Adjust width for medium screens */
+    }
+
+    .about-us-item p {
+        font-size: 0.9em; /* Smaller text size on medium screens */
+    }
+}
+
+@media (max-width: 576px) {
+    #about-us {
+        padding: 30px 10px; /* Adjust padding for small screens */
+        margin-top: 300px; /* Adjust top margin for small screens */
+    }
+
+    #about-us h2 {
+        font-size: 1.6em; /* Smaller heading on small screens */
+    }
+
+    .about-us-item {
+        width: 100%; /* Full width on small screens */
+        max-width: 300px; /* Max width to ensure items are not too large */
+    }
+
+    .about-us-item p {
+        font-size: 0.8em; /* Smaller text size on small screens */
+
+    }
+    
+}
+/* Additional Content Section */
+#additional-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4; /* Light background for contrast */
+}
+
+.content-block {
+    max-width: 800px; /* Adjust as needed */
+    text-align: right;
+    margin-bottom: 20px; /* Space between blocks */
+    margin: 0 20px;
+}
+
+.content-block h2 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    line-height: 1.9; 
+    font-size: x-large;
+
+}
+
+.content-block p {
+    font-size: 1.2em;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.7); /* Adjust text color */
+    text-align: left;
+    line-height: 1.9; 
+}
+
+.image-block {
+    width: 450px;
+    height: 530px;
+    margin: 0 20px;
+}
+
+.image-block img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: Rounded corners for images */
+}
+
+
+.btn-view-projects {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px; /* Space between the text and the button */
+    margin-right: 55%;
+    background-color: red; /* Button background color */
+    color: white; /* Button text color */
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners for the button */
+    transition: background-color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.btn-view-projects:hover {
+    background-color: darkred; /* Darker color on hover */
+}
+
+/* Responsive Design for Tablets (768px to 1024px) */
+@media screen and (max-width: 1024px) {
+    .content-block {
+        max-width: 100%;
+        margin: 0 10px;
+    }
+
+    .image-block {
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .btn-view-projects {
+        margin-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Responsive Design for Mobile Devices (up to 767px) */
+@media screen and (max-width: 767px) {
+    #additional-content {
+        padding: 20px 10px;
+    }
+
+    .content-block {
+        text-align: center;
+        margin: 0 10px;
+    }
+
+    .content-block h2 {
+        font-size: 1.2em;
+        font-size: large;
+    }
+
+    .content-block p {
+        font-size: 1em;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    .image-block {
+        width: 50%;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .btn-view-projects {
+        margin-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+}
+#additional-items {
+  padding: 10px;
+
+}
+
+.additional-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.additional-item {
+  flex: 1;
+  min-width: 100px; /* Adjust as needed */
+  min-height: -20px;
+}
+
+
+
+.additional-item h1 {
+  font-size: 25px; /* Adjust as needed */
+  line-height: 1.5;
+  font-weight: 150;
+  display: flex; /* Use flexbox for horizontal alignment */
+  align-items: center; /* Vertically center the items */
+}
+
+.number {
+  font-size: 50px; /* Adjust size as needed */
+  color: rgb(255, 0, 0);
+  font-weight: 150;
+  margin-right: 10px; /* Spacing between number and heading text */
+}
+
+.additional-item p {
+  font-size: 16px; /* Adjust as needed */
+  line-height: 1.5;
+  margin-left: 85px;
+}
+.heading-text {
+  font-size: 25px; /* Adjust as needed */
+  margin-right: 10px; /* Spacing between heading text and "Optimization" */
+  margin-bottom: 10%;
+}
+
+.heading-subtext {
+  font-size: 25px; /* Same size as heading text */
+  margin-left: -175px; /* Adjust to position "Optimization" in front of the number */
+  margin-top: 10%;
+}
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+  .additional-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .additional-item {
+    min-width: 100%;
+  }
+
+  .number {
+    font-size: 30px; /* Further reduce size for small screens */
+    margin-right: 5px;
+  }
+
+  .heading-text,
+  .heading-subtext {
+    font-size: 18px; /* Further reduce font size */
+  }
+
+  .additional-item p {
+    font-size: 13px; /* Reduce font size for mobile */
+    margin-left: 50px; /* Adjust margin */
+  }
+}
+#our-work {
+  padding: 40px 0; /* Adjust as needed */
+}
+
+.our-work-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.our-work-heading h1 {
+  font-size: 48px; /* Main heading size */
+  margin: 0;
+}
+
+.our-work-container {
+  max-width: 1200px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+.our-work-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 40px; /* Space between each content block */
+  flex-direction: row; /* Default layout */
+}
+
+.our-work-content-reversed {
+  flex-direction: row-reverse; /* Reverses the order for alternating layout */
+  
+}
+
+.our-work-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.our-work-text h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.our-work-text h4 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.our-work-text p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: rgb(92, 92, 92);
+}
+
+.our-work-author {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 50px; /* Size of the profile picture */
+  height: 50px;
+  border-radius: 50%; /* Makes the image round */
+  overflow: hidden; /* Hides overflow to keep the round shape */
+  margin-right: 10px; /* Space between the profile pic and text */
+}
+
+.profile-pic img {
+  width: 100%;
+  height: auto;
+}
+
+.author-info p {
+  margin: 0;
+}
+
+.btn-view-portfolio {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  border: 2px solid red;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-view-portfolio:hover {
+  background-color: red;
+  color: white;
+}
+
+.our-work-image {
+  flex: 1;
+  text-align: left; /* Default alignment for images */
+}
+
+.our-work-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .our-work-content {
+    flex-direction: column; /* Stacks image and text vertically on small screens */
+  }
+
+  .our-work-image {
+    text-align: center; /* Centers the image on small screens */
+    width: 50%;
+    height: auto;
+  }
+
+  .our-work-text {
+    padding: 20px 10px; /* Adjust padding for small screens */
+  }
+}
+
+.testimonial-slider {
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+    overflow: hidden; /* Ensures only one group of testimonials is visible */
+    margin: 0 auto; /* Center the slider container */
+}
+
+.testimonials {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%; /* Three testimonial groups, each taking 100% */
+    justify-content: center; /* Center the content horizontally */
+}
+
+.testimonial-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.testimonial {
+    width: 30%;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.quote {
+    font-size: 50px;
+    color: #E74C3C;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.profile img {
+   
+    width: 60px; /* Adjust the size as needed */
+    height: 60px; /* Adjust the size as needed */
+    border-radius: 50%; /* This makes the image circular */
+    object-fit: cover; /* This ensures the image covers the circle without distortion */
+    border: 2px solid #ddd; /* Optional: adds a border around the circle */
+}
+
+.profile h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.profile p {
+    margin: 0;
+    color: gray;
+    font-size: 14px;
+}
+
+.dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #E74C3C;
+}
+@media (min-width: 768px) {
+    .testimonial {
+        width: 30%; /* Reverts to the original size for tablets and above */
+        margin-bottom: 0; /* Removes extra margin for larger screens */
+    }
+
+    .quote {
+        font-size: 50px; /* Reverts to original size */
+    }
+
+    .profile img {
+        width: 60px; /* Reverts to original size */
+        height: 60px;
+    }
+
+    .profile h3 {
+        font-size: 18px; /* Reverts to original size */
+    }
+
+    .profile p {
+        font-size: 14px; /* Reverts to original size */
+    }
+
+    .dots {
+        margin-top: 20px; /* Reverts to original margin */
+    }
+
+    .dot {
+        height: 15px; /* Reverts to original size */
+        width: 15px;
+    }
+}
+/* Styles for the centered picture section */
+#centered-picture {
+    text-align: center; /* Center the image horizontally */
+    margin: 40px 0; /* Space above and below the image */
+}
+
+#centered-picture img {
+    max-width: 70%; /* Make sure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: adds rounded corners to the image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: adds shadow around the image */
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    #centered-picture img {
+        max-width: 80%; /* Adjust size for tablets or smaller desktops */
+    }
+}
+
+@media (max-width: 992px) {
+    #centered-picture img {
+        max-width: 90%; /* Adjust size for tablets in landscape mode */
+    }
+}
+
+@media (max-width: 768px) {
+    #centered-picture img {
+        max-width: 100%; /* Full width for tablets in portrait mode and larger mobile devices */
+    }
+}
+
+@media (max-width: 576px) {
+    #centered-picture img {
+        max-width: 100%; /* Ensure the image fits within mobile devices */
+        margin: 20px 0; /* Adjust spacing for smaller screens */
+    }
+}
+
+
+/* Styles for the recent blog section */
+#recent-blogs {
+    text-align: center; /* Center the heading */
+    padding: 40px 20px; /* Space around the section */
+}
+
+#recent-blogs h2 {
+    font-size: 2em; /* Adjust size as needed */
+    margin-bottom: 30px; /* Space below the heading */
+    color: #333; /* Adjust color as needed */
+}
+
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between blog posts */
+    justify-content: center; /* Center the blog posts horizontally */
+}
+
+.blog-post {
+    width: calc(25% - 20px); /* Four items per row, adjust for spacing */
+    box-sizing: border-box;
+    border: 1px solid #ddd; /* Optional border */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensure the image doesn't overflow */
+    background-color: white; /* Background color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    text-align: center; /* Center the text within the blog post */
+}
+
+.blog-title {
+    font-size: 16px; /* Size of the title text */
+    padding: 10px; /* Padding around the text */
+    background-color: #f5f5f5; /* Light background color */
+    border-bottom: 1px solid #ddd; /* Border below the title */
+}
+.blog-post:hover{
+    color: #E74C3C;
+    cursor: pointer;
+}
+.blog-post img {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.blog-content {
+    padding: 15px; /* Padding around text */
+}
+
+.blog-content .date,
+.blog-content .author {
+    font-size: 14px;
+    color: gray;
+    margin: 0;
+}
+
+.blog-content .description {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .blog-post {
+        width: calc(50% - 20px); /* Two items per row for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-post {
+        width: calc(100% - 20px); /* One item per row for small screens */
+    }
+}
+footer {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px 20px;
+}
+
+.footer-column h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #aaa;
+}
+
+.footer-column p {
+    margin-bottom: 10px;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    color: #aaa;
+}
+.footer-bottom span {
+    color: rgb(237, 11, 11);
+}
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2);
+}
+
+        </style>
+</head>
+<body>
+    
+    <div id="top-bar">
+        <div id="top-bar-content">
+            <span id="colorlib-text">Colorlib</span>
+            <button id="increase-size">+Avo</button>
+            <div id="view-options">
+                <button class="icon-button" data-view="desktop" title="Desktop">
+                    <img src="desktop.png" alt="Desktop">
+                </button>
+                <button class="icon-button" data-view="tablet" title="Tablet">
+                    <img src="tablet.png" alt="Tablet">
+                </button>
+                <button class="icon-button" data-view="mobile" title="Mobile">
+                    <img src="mobile.png" alt="Mobile">
+                </button>
+                <a href="https://colorlib.com" id="shopping-button" target="_blank" title="Shopping">
+                    <img src="https://th.bing.com/th/id/R.7f35b69d7a4516669135186dcb3ebce4?rik=Ch23HixpSn7fAg&pid=ImgRaw&r=0" alt="Shopping">
+                </a>
+                <button id="close-bar" title="Close">
+                    <img src="cross.png" alt="Close" id="close-icon">
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Background Image Container -->
+    <div id="background-container"></div>
+    
+    <!-- Navigation Bar -->
+    <div id="navigation">
+        
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="work.html">Work</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    
+    <!-- Content Section -->
+    <div id="content">
+        <div class="logo">
+            <span class="letter-a">a</span>
+            <span class="letter-v">v</span>
+            <span class="letter-o">o</span>
+        </div>
+        <div id="left-text">
+            
+            <h1>We Create <br>
+                Modern & <br>
+                Minimal Websites</h1>
+                <p>A small river named duden flows by their place and <br>
+                    supplies it with necessary regelialia
+                </p>
+                <button id="red-button">Start Project</button>
+                <a href="proved.mp4" class="btn btn-video">
+                    <span class="play-icon">&#9658;</span>
+                    
+                </a>
+            </div>
+            
+        </div>
+        <div id="right-text">
+            <h1 class="number" id="number-display">400</h1>
+            <p id="text-display">Successful projects</p>
+            <h1 class="number hidden" id="number-display-hidden">21</h1>
+            <p class="hidden" id="text-display-hidden">Years experienced <br> in the field</p>
+        </div>
+        
+        <!-- About Us Section -->
+        <section id="about-us">
+        <h2>About Us</h2>
+        <div class="about-us-content">
+            <div class="about-us-item">
+                <img src="ux.png" alt="UI/UX Design">
+                <p>UI/UX Design</p>
+            </div>
+            <div class="about-us-item">
+                <img src="web.png" alt="Web Development">
+                <p>Web Development</p>
+            </div>
+            <div class="about-us-item">
+                <img src="pro.png" alt="Product Design">
+                <p>Product Design</p>
+            </div>
+            <div class="about-us-item">
+                <img src="mob.png" alt="Mobile Apps">
+                <p>Mobile Apps</p>
+            </div>
+            <div class="about-us-item">
+                <img src="seo.png" alt="SEO">
+                <p>SEO</p>
+            </div>
+        </div>
+        </section>
+        <!-- New Content Section -->
+<section id="additional-content">
+    <div class="content-block">
+        <h2>Welcome to AVO A <br>
+            Personal Portfolio <br> 
+            Web Agency</h2>
+        <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+    </div>
+    <div class="image-block">
+        <img src="imag1.png" alt="Descriptive Image">
+    </div>
+    <div class="content-block">
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+        <a href="index.html" class="btn-view-projects">View All Projects</a>
+    </div>
+    
+</section>
+<section id="additional-items">
+    <div class="additional-content">
+        <div class="additional-item">
+            <h1>
+                <span class="number">01</span>
+                <span class="heading-text">Search Engine</span><br>
+                <span class="heading-subtext">Optimization</span>
+            </h1>
+            <p>Far far away, behind the word <br> mountains</p>
+        </div>
+        <div class="additional-item">
+            <h1>
+                <span class="number">02</span>
+                <span class="heading-text">Search Engine</span><br>
+                <span class="heading-subtext">Optimization</span>
+            </h1>
+            <p>Far far away, behind the word <br> mountains</p>
+        </div>
+        <div class="additional-item">
+            <h1>
+                <span class="number">03</span>
+                <span class="heading-text">Search Engine</span><br>
+                <span class="heading-subtext">Optimization</span>
+            </h1>
+            <p>Far far away, behind the word <br>mountains</p>
+        </div>
+    </div>
+</section>
+<section id="our-work">
+    <div class="our-work-heading">
+        <h1>Our Work</h1>
+    </div>
+    <div class="our-work-container">
+        <div class="our-work-content">
+            <div class="our-work-image">
+                <img src="casste.png" alt="Descriptive Image 1">
+            </div>
+            <div class="our-work-text">
+                <h3>Web Design</h3>
+                <h4>Cassette tape</h4>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <div class="our-work-author">
+                    <div class="profile-pic">
+                        <img src="https://th.bing.com/th/id/OIP.X5sx2wq55Np21IuqALFgsgHaLH?w=736&h=1104&rs=1&pid=ImgDetMain" alt="Jamie Jonson">
+                    </div>
+                    <div class="author-info">
+                        <p>Jamie Jonson</p>
+                        <p>avo.com</p>
+                    </div>
+                </div>
+                <a href="portfolio.html" class="btn-view-portfolio">View Portfolio</a>
+            </div>
+        </div>
+
+        <div class="our-work-content reversed">
+            <div class="our-work-text">
+                <h3>Another Design</h3>
+                <h4>Some Label</h4>
+                <p>Additional details about this design, providing a rich description and background information.</p>
+                <div class="our-work-author">
+                    <div class="profile-pic">
+                        <img src="https://th.bing.com/th/id/OIP.X5sx2wq55Np21IuqALFgsgHaLH?w=736&h=1104&rs=1&pid=ImgDetMain" alt="Jamie Jonson">
+                    </div>
+                    <div class="author-info">
+                        <p>Jamie Jonson</p>
+                        <p>avo.com</p>
+                    </div>
+                </div>
+                <a href="portfolio.html" class="btn-view-portfolio">View Portfolio</a>
+            </div>
+            <div class="our-work-image">
+                <img src="key.png" alt="Descriptive Image 2">
+            </div>
+        </div>
+
+        <div class="our-work-content">
+            <div class="our-work-image">
+                <img src="laptp.png" alt="Descriptive Image 3">
+            </div>
+            <div class="our-work-text">
+                <h3>Creative Project</h3>
+                <h4>Innovative Concept</h4>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <div class="our-work-author">
+                    <div class="profile-pic">
+                        <img src="https://th.bing.com/th/id/OIP.X5sx2wq55Np21IuqALFgsgHaLH?w=736&h=1104&rs=1&pid=ImgDetMain" alt="Jamie Jonson">
+                    </div>
+                    <div class="author-info">
+                        <p>Jamie Jonson</p>
+                        <p>avo.com</p>
+                    </div>
+                </div>
+                <a href="portfolio.html" class="btn-view-portfolio">View Portfolio</a>
+            </div>
+        </div>
+
+        <div class="our-work-content reversed">
+            <div class="our-work-text">
+                <h3>Design Excellence</h3>
+                <h4>Modern Approach</h4>
+                <p>Detailed information about the modern design approach and how it sets the project apart.</p>
+                <div class="our-work-author">
+                    <div class="profile-pic">
+                        <img src="https://i.pinimg.com/736x/07/44/76/074476f844838fb2487a9d7b4d08a904.jpg" alt="Jamie Jonson">
+                    </div>
+                    <div class="author-info">
+                        <p>Jamie Jonson</p>
+                        <p>avo.com</p>
+                    </div>
+                </div>
+                <a href="portfolio.html" class="btn-view-portfolio">View Portfolio</a>
+            </div>
+            <div class="our-work-image">
+                <img src="spir.png" alt="Descriptive Image 4">
+            </div>
+        </div>
+
+        <div class="our-work-content">
+            <div class="our-work-image">
+                <img src="clock.png" alt="Descriptive Image 5">
+            </div>
+            <div class="our-work-text">
+                <h3>Final Project</h3>
+                <h4>Ultimate Design</h4>
+                <p>Comprehensive details on the final project, including its impact and significance.</p>
+                <div class="our-work-author">
+                    <div class="profile-pic">
+                        <img src="https://i.pinimg.com/736x/07/44/76/074476f844838fb2487a9d7b4d08a904.jpg" alt="Jamie Jonson">
+                    </div>
+                    <div class="author-info">
+                        <p>Jamie Jonson</p>
+                        <p>avo.com</p>
+                    </div>
+                </div>
+                <a href="portfolio.html" class="btn-view-portfolio">View Portfolio</a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="testimonial-section"></section>
+<div class="testimonial-slider">
+    <div class="testimonials">
+        <div class="testimonial-group">
+            <div class="testimonial">
+                <div class="quote">❝</div>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <div class="profile">
+                    <img src="https://th.bing.com/th/id/OIP.UGlKxiZQylR3CnJIXSbFIAHaLL?rs=1&pid=ImgDetMain" alt="Roger Scott">
+                    <div>
+                        <h3>Roger Scott</h3>
+                        <p>Marketing Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="quote">❝</div>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <div class="profile">
+                    <img src="https://th.bing.com/th/id/OIP.hLTThhxHPeGqFQVjpD1-hwHaE8?rs=1&pid=ImgDetMain" alt="Roger Scott">
+                    <div>
+                        <h3>Roger Scott</h3>
+                        <p>Marketing Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="quote">❝</div>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <div class="profile">
+                    <img src="https://th.bing.com/th/id/OIP.88hQwxL9ILYl7PV_HXgWqgHaE8?rs=1&pid=ImgDetMain" alt="Roger Scott">
+                    <div>
+                        <h3>Roger Scott</h3>
+                        <p>Marketing Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-group">
+            <div class="testimonial">
+                <div class="quote">❝</div>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <div class="profile">
+                    <img src="https://th.bing.com/th/id/OIP.UGlKxiZQylR3CnJIXSbFIAHaLL?rs=1&pid=ImgDetMain" alt="Roger Scott">
+                    <div>
+                        <h3>Roger Scott</h3>
+                        <p>Marketing Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="quote">❝</div>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <div class="profile">
+                    <img src="https://th.bing.com/th/id/OIP.88hQwxL9ILYl7PV_HXgWqgHaE8?rs=1&pid=ImgDetMain" alt="Roger Scott">
+                    <div>
+                        <h3>Roger Scott</h3>
+                        <p>Marketing Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="quote">❝</div>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <div class="profile">
+                    <img src="https://th.bing.com/th/id/OIP.hLTThhxHPeGqFQVjpD1-hwHaE8?rs=1&pid=ImgDetMain" alt="Roger Scott">
+                    <div>
+                        <h3>Roger Scott</h3>
+                        <p>Marketing Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-group">
+            <div class="testimonial">
+                <div class="quote">❝</div>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <div class="profile">
+                    <img src="https://th.bing.com/th/id/OIP.88hQwxL9ILYl7PV_HXgWqgHaE8?rs=1&pid=ImgDetMain" alt="Roger Scott">
+                    <div>
+                        <h3>Roger Scott</h3>
+                        <p>Marketing Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="quote">❝</div>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <div class="profile">
+                    <img src="https://th.bing.com/th/id/OIP.hLTThhxHPeGqFQVjpD1-hwHaE8?rs=1&pid=ImgDetMain" alt="Roger Scott">
+                    <div>
+                        <h3>Roger Scott</h3>
+                        <p>Marketing Manager</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="quote">❝</div>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <div class="profile">
+                    <img src="https://th.bing.com/th/id/OIP.UGlKxiZQylR3CnJIXSbFIAHaLL?rs=1&pid=ImgDetMain" alt="Roger Scott">
+                    <div>
+                        <h3>Roger Scott</h3>
+                        <p>Marketing Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="dots">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+</div>
+</section>
+<section id="centered-picture">
+    <img src="get.png" alt="Centered Picture">
+</section>
+
+
+<section id="recent-blogs">
+    <h2>Recent Blog</h2>
+    <div class="blog-container">
+        <div class="blog-post">
+            <div class="blog-title">Apply your blockchain <br>team</div>
+            <img src="1blog.png" alt="Blog Post 1">
+            <div class="blog-content">
+                <p class="date">June 01, 2020</p>
+                <p class="author">Admin 3</p>
+                <p class="description">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+            </div>
+        </div>
+        <div class="blog-post">
+            <div class="blog-title">Apply your  blockchain <br>team</div>
+            <img src="2blog.png" alt="Blog Post 2">
+            <div class="blog-content">
+                <p class="date">June 01, 2020</p>
+                <p class="author">Admin 3</p>
+                <p class="description">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+            </div>
+        </div>
+        <div class="blog-post">
+            <div class="blog-title">Apply your blockchain <br> team</div>
+            <img src="3blog.png" alt="Blog Post 3">
+            <div class="blog-content">
+                <p class="date">June 01, 2020</p>
+                <p class="author">Admin 3</p>
+                <p class="description">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+            </div>
+        </div>
+        <div class="blog-post">
+            <div class="blog-title">Apply your blockchain <br>team</div>
+            <img src="4blog.png" alt="Blog Post 4">
+            <div class="blog-content">
+                <p class="date">June 01, 2020</p>
+                <p class="author">Admin 3</p>
+                <p class="description">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="footer-container">
+    <div class="footer-column">
+        <h3>avo</h3>
+        <p>Far far away, behind <br>the word mountains,<br> far from the countries.</p>
+        
+    </div>
+
+        <div class="footer-column">
+            
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Rooms</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="#">Our Location</a></li>
+                <li><a href="#">The Hosts</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Restaurant</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Contact Info</h3>
+            <p>Address: 98 West 21th Street, Suite 721 New York NY 10016</p>
+            <p>Phone: (+1) 435 3533</p>
+            <p>Email: info@yourdomain.com</p>
+        </div>
+        
+    </div>
+    <div class="footer-bottom">
+        <p>Copyright © 2024 All rights reserved | This template is made with <span> ❤</span> by Colorlib</p>
+       
+            <div class="social-icons">
+                <a href="#"><img src="https://th.bing.com/th/id/R.ac7c4437586fd33b6b0f65925408b0ad?rik=6FfGDRFJujUh8g&riu=http%3a%2f%2fwww.newdesignfile.com%2fpostpic%2f2013%2f01%2ffacebook-icon-black-circle_155320.png&ehk=BuMAJhlSegbPE3BBoW22OQEsHZbMWclvDlUgbZjUMGA%3d&risl=&pid=ImgRaw&r=0" alt="Facebook"></a>
+                <a href="#"><img src="https://th.bing.com/th/id/OIP.9_ZXseiaB1tgYquikdl68AHaFj?w=268&h=200&c=7&r=0&o=5&dpr=1.7&pid=1.7" alt="Instagram"></a>
+                <a href="#"><img src="https://th.bing.com/th/id/OIP.VsqHoEuY7p-i84-_MHWGkAHaHw?rs=1&pid=ImgDetMain" alt="YouTube"></a>
+                <a href="#"><img src="https://th.bing.com/th/id/OIP.Vr8DfHIHQWd3rUGnO20uOgHaHa?w=172&h=180&c=7&r=0&o=5&dpr=1.7&pid=1.7" alt="Twitter"></a>
+                <a href="#"><img src="https://th.bing.com/th/id/OIP.eb41Yo7b_b1DPmvsgGqyPgHaHa?w=162&h=180&c=7&r=0&o=5&dpr=1.7&pid=1.7" alt="Indeed"></a>
+            </div>
+        </div>
+    </div>
+    
+</footer>
+  <script>
+document.getElementById('increase-size').addEventListener('click', function() {
+    const topBar = document.getElementById('top-bar');
+    topBar.classList.toggle('expanded');
+});
+
+document.getElementById('close-bar').addEventListener('click', function() {
+    const topBar = document.getElementById('top-bar');
+    topBar.style.display = 'none';
+});
+
+// Array of background images
+const backgrounds = [
+    'url("https://th.bing.com/th/id/OIP.nr4QlLxHKwBONaNaLZ8uMwHaEJ?rs=1&pid=ImgDetMain")',
+    'url("https://img.freepik.com/premium-photo/red-ball-that-is-black-background_662214-169418.jpg")',
+];
+
+// Text for the red button
+const buttonTexts = ['Start Project', 'Explore Project'];
+
+// Text for the right section
+const rightTexts = [
+    '<h1 class="number" id="number-display">400</h1><p id="text-display">Successful projects</p>',
+    '<h1 class="number" id="number-display-hidden">21</h1><p id="text-display-hidden">Years experienced <br> in the field</p>'
+];
+
+let currentIndex = 0;
+const backgroundContainer = document.getElementById('background-container');
+const redButton = document.getElementById('red-button');
+const rightText = document.getElementById('right-text');
+
+function countToNumber(target, duration) {
+    let start = 1;
+    let end = target;
+    let stepTime = Math.abs(Math.floor(duration / (end - start)));
+    let timer = setInterval(function() {
+        document.getElementById('number-display').textContent = start;
+        if (start >= end) {
+            clearInterval(timer);
+        }
+        start++;
+    }, stepTime);
+}
+
+function changeContent() {
+    // Update background and red button text
+    backgroundContainer.style.backgroundImage = backgrounds[currentIndex];
+    redButton.textContent = buttonTexts[currentIndex];
+
+    if (currentIndex === 0) {
+        // Show "400" and start counting
+        rightText.innerHTML = rightTexts[currentIndex];
+        countToNumber(400, 3000); // Count to 400 over 3 seconds
+
+        // Switch to the second content after the counting
+        setTimeout(() => {
+            // Hide "400" and show "21"
+            document.getElementById('number-display').classList.add('hidden');
+            document.getElementById('text-display').classList.add('hidden');
+            document.getElementById('number-display-hidden').classList.remove('hidden');
+            document.getElementById('text-display-hidden').classList.remove('hidden');
+        }, 5000); // Wait for counting to finish
+    } else {
+        // Show the second content
+        rightText.innerHTML = rightTexts[currentIndex];
+    }
+
+    // Move to the next index for the next cycle
+    currentIndex = (currentIndex + 1) % backgrounds.length;
+}
+
+// Change content every 10 seconds to give enough time for the counting and transition
+setInterval(changeContent, 5000);
+
+// Initial content setup
+changeContent();
+(function() {
+    let currentIndex = 0;
+    const dots = document.querySelectorAll('.dot');
+    const testimonials = document.querySelector('.testimonials');
+    const totalSlides = dots.length;
+
+    function currentSlide(index) {
+        currentIndex = index - 1;
+        updateSlider();
+    }
+
+    function updateSlider() {
+        const transformValue = -currentIndex * 100 / totalSlides;
+        testimonials.style.transform = `translateX(${transformValue}%)`;
+        updateDots();
+    }
+
+    function updateDots() {
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    // Add event listeners to dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide(index + 1); // Adjust to match the correct slide index
+        });
+    });
+
+    // Initialize the slider
+    updateSlider();
+})();
+
+
+
+
+       </script>
+  
+
+    
+</body>
+</html>
